@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1 class="logo">Discover</h1>
+						<h1 class="logo">Discovery</h1>
 					</header>
 
 				<!-- Nav -->

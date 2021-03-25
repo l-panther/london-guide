@@ -23,7 +23,7 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline; }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -3395,7 +3395,7 @@ main .activity {
 	padding: 10px;
 	width: 60%;
 	margin: auto;
-    margin-top: 20px; 
+    margin-top: 30px; 
 	overflow: hidden; }
 
 .activity .w3-card:hover {
@@ -4313,9 +4313,9 @@ article { padding-bottom: 20px; }
 		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		display: none;
 		-webkit-overflow-scrolling: touch;
-		background: #ffffff;
+		background: #212931;
 		box-shadow: none;
-		color: #212931;
+		color: #f2f2f2;
 		height: 100%;
 		max-width: 80%;
 		overflow-y: auto;
@@ -4450,7 +4450,8 @@ article { padding-bottom: 20px; }
 		
 		.activity .w3-card {
 			width: 90%;
-			margin: auto; }
+			margin: auto; 
+			margin-bottom: 30px; }
 		
 		.activity .w3-btn {
 			width: 100%;
