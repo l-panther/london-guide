@@ -1,4 +1,4 @@
-git Title
+Title
 -----------
 London Guide: A website
 
