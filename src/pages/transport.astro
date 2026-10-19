@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout>
+<Header title="Getting around the city"/>
+<section class="section">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-8">
+        <h2>Getting Around</h2>
+        <p style="max-width:640px;">If you want to get around in London, there's always a variety of public services available day or night. Most public services run all day, and some provide dedicated night services so you will never be stranded. Please check with your chosen service for times of operation.</p>
+
+        <div class="mt-4">
+          
+      <div class="transport-card" id="bus">
+        <div class="row g-0">
+          <div class="col-12 art">
+            <img src="/assets/images/main/bus.jpg" alt="A double-decker London bus on the streets" class="transportImg">         
+          </div>
+          <div class="col-12 p-4">
+            <h3><i class="bi bi-bus-front me-2" aria-hidden="true"></i>London Buses</h3>
+            <p class="mb-3">A single bus fare costs &pound;1.50, payable via Visitor Oyster card, Oyster card, Travelcard or contactless. A second bus journey within an hour is free. Maximum daily spend is &pound;4.50 using the same payment method. <a href='#'>Check the TFL website for bus information.</a></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="transport-card" id="tube">
+        <div class="row g-0">
+          <div class="col-md-5 art">
+            <img src="/assets/images/main/tube.jpg" alt="A double-decker London bus on the streets" class="transportImg">         
+          </div>
+          <div class="col-12 p-4">
+            <h3><i class="bi bi-train-front me-2" aria-hidden="true"></i>Tube</h3>
+            <p class="mb-3">London's Tube network has nine zones. Free maps are available at stations. <a href='#'>Check the TFL website for Tube information.</a></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="transport-card" id="rail">
+        <div class="row g-0">
+          <div class="col-md-5 art">
+            <img src="/assets/images/main/rail.jpg" alt="A double-decker London bus on the streets" class="transportImg">         
+          </div>
+          <div class="col-12 p-4">
+            <h3><i class="bi bi-train-lightrail-front me-2" aria-hidden="true"></i>Rail</h3>
+            <p class="mb-3">Overground rail services connect across and beyond London. Payment is accepted via Oyster, Travelcard or contactless. <a href='#'>Check the TFL website for rail information.</a></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="transport-card" id="taxi">
+        <div class="row g-0">
+          <div class="col-md-5 art">
+            <img src="/assets/images/main/taxi.jpg" alt="A double-decker London bus on the streets" class="transportImg">         
+          </div>
+          <div class="col-12 p-4">
+            <h3><i class="bi bi-taxi-front me-2" aria-hidden="true"></i>Taxi</h3>
+            <p class="mb-3">Minimum fare is &pound;2.60, with extra charges from Heathrow, by phone bookings, and on holidays. All black cabs accept card payments without surcharge. <a href='#'>Check the TFL website for taxi information.</a></p>
+          </div>
+        </div>
+      </div>
+    
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <nav class="gt-side" style="position:sticky; top:20px;" aria-label="Jump to transport type">
+          <a href="#bus">Bus</a>
+          <a href="#tube">Tube</a>
+          <a href="#rail">Rail</a>
+          <a href="#taxi">Taxi</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<main role="main" id="main">
+  <section id="main-transport" class="post featured">
+    <div class="main-content spacing">
+      <div class="w3-row">
+        
+        <!-- Transport Articles -->
+        <article class="w3-padding w3-col l7 m12 s12" tabindex="0">
+          <header class="major">
+            <h2 class="w3-left-align" id="getting-around-heading">Getting Around</h2>
+          </header>
+          <p>If you want to get around in London, there's always a variety of public services available day or night. Most public services run all day, and some provide dedicated night services so you will never be stranded.</p>
+          <p>Please check with your chosen service for times of operation.</p>
+
+          <!-- Transport Options -->
+          <div id="transport-options">
+
+            <!-- Bus -->
+            <article id="bus" class="transport">
+              <img src="/assets/images/main/bus.jpg" alt="A double-decker London bus on the streets" class="transportImg">
+              <div class="transport-text">
+                <h3>London Buses <img src="/assets/images/icons/bus.png" alt="Bus icon" class="transport-icon"></h3>
+                <p>A single bus fare costs £1.50, payable via Visitor Oyster card, Oyster card, Travelcard or contactless. A second bus journey within an hour is free. Maximum daily spend is £4.50 using the same payment method. <a href="#" aria-label="More information about London buses">Check the TFL website for bus information.</a></p>
+              </div>
+            </article>
+
+            <!-- Tube -->
+            <article id="metro" class="transport">
+              <img src="/assets/images/main/tube.jpg" alt="Inside the London Underground tube" class="transportImg">
+              <div class="transport-text">
+                <h3>Tube <img src="/assets/images/icons/metro.png" alt="Metro icon" class="transport-icon"></h3>
+                <p>London's Tube network has nine zones. Free maps are available at stations. <a href="#" aria-label="More information about the London Tube system">Check the TFL website for Tube information.</a></p>
+              </div>
+            </article>
+
+            <!-- Rail -->
+            <article id="rail" class="transport">
+              <img src="/assets/images/main/rail.jpg" alt="Overground rail services in London" class="transportImg">
+              <div class="transport-text">
+                <h3>Rail <img src="/assets/images/icons/rail.png" alt="Rail icon" class="transport-icon"></h3>
+                <p>Overground rail services connect across and beyond London. Payment is accepted via Oyster, Travelcard or contactless. <a href="#" aria-label="More information about rail services in London">Check the TFL website for rail information.</a></p>
+              </div>
+            </article>
+
+            <!-- Taxi -->
+            <article id="taxi" class="transport">
+              <img src="/assets/images/main/taxi.jpg" alt="A London black cab" class="transportImg">
+              <div class="transport-text">
+                <h3>Taxi <img src="/assets/images/icons/taxi.png" alt="Taxi icon" class="transport-icon"></h3>
+                <p>Minimum fare is £2.60, with extra charges from Heathrow, by phone bookings, and on holidays. All black cabs accept card payments without surcharge. <a href="#" aria-label="More information about London taxis">Check the TFL website for taxi information.</a></p>
+              </div>
+            </article>
+
+          </div>
+        </article>
+
+        <!-- Side Menu -->
+        <aside role="complementary" class="w3-col l5 m12 s12" id="menu" aria-labelledby="side-menu-heading">
+          <h2 id="side-menu-heading" class="w3-hide">Quick links to transport options</h2>
+          <ul id="sidemenu">
+            <li><a href="#bus" aria-label="Jump to bus section">Bus</a></li>
+            <li><a href="#metro" aria-label="Jump to tube section">Tube</a></li>
+            <li><a href="#rail" aria-label="Jump to rail section">Rail</a></li>
+            <li><a href="#taxi" aria-label="Jump to taxi section">Taxi</a></li>
+          </ul>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+</main>
+</Layout>

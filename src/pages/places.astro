@@ -1,0 +1,223 @@
+---
+import Header from '../components/Header.astro';
+type Price = Record<string, string | undefined>;
+
+type Place = {
+  id: number;
+  name: string;
+  price: Price[];
+  opening: string;
+  image: string;
+  alt: string;
+  description: string;
+};
+
+import Layout from '../layouts/Layout.astro';
+import Icons from '../components/NavIcons.astro';
+import placesData from '../../public/assets/data/places.json';
+
+const places: Place[] = placesData;
+
+// Helper function to render prices with "Free" for 0
+function renderPrices(priceArray: Price[]): string {
+  return priceArray
+    .map((p) => {
+      const key = Object.keys(p)[0];
+      const value = p[key];
+      return `<div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value === "0" ? "Free" : `£${value}`}</div>`;
+    })
+    .join('');
+}
+
+function getFromPrice(priceArray: Price[]): string {
+  if (!priceArray.length) return '';
+  const value = Object.values(priceArray[0])[0];
+  return value === "0" ? "Free" : `£${value}`;
+}
+---
+
+<Layout>
+  <Header title="Explore the city." />
+  <section class="section alt">
+    <div class="container">
+      <h2>Things To Do</h2>
+      <p style="max-width:760px;">London is full of exciting activities for everyone, from exploring the zoo and touring the city to immersing yourself in its rich culture. Discover just a few of the fun experiences available for children, adults, and the whole family.</p>
+
+      <div class="row g-4 mt-2">
+
+        {places.map((place) => (
+          <div class="col-12 col-sm-6 col-md-4">
+
+            <div class="card activity-card">
+
+              <button
+                type="button"
+                class="border-0 p-0 bg-transparent text-start w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#activityModal"
+                data-activity={place.image}
+                aria-haspopup="dialog"
+              >
+
+                <span class="art d-block">
+                  <img
+                    src={`/assets/images/places/${place.image}.jpg`}
+                    alt={place.alt}
+                    class="img-fluid"
+                  />
+                </span>
+
+                <span class="band d-block text-center">
+                  {place.name}
+                </span>
+
+                <span class="price-block d-block">
+
+                  <small>from</small>
+
+                  <strong>
+                    {getFromPrice(place.price)}
+                  </strong>
+
+                </span>
+
+                <span class="more-btn d-block">
+                  More info
+                </span>
+
+              </button>
+            </div>
+          </div>
+        ))}
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="explore">
+    <div class="container text-center">
+      <h2>Explore the City</h2>
+      <div id="places-map" class="mt-4" role="application" aria-label="Map of activity locations in London"></div>
+    </div>
+  </section>
+
+  <!-- ---------- shared activity modal ---------- -->
+  <div class="modal fade" id="activityModal" tabindex="-1" aria-hidden="true" aria-labelledby="activityModalLabel">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="activityModalLabel"></h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-desc"></p>
+        </div>
+        <div class="modal-art" aria-hidden="true"></div>
+        <div class="info-band">
+          <div class="info-row">
+            <i class="bi bi-calendar-event" aria-hidden="true"></i>
+            <div>
+              <strong class="hours-title"></strong><br>
+              <span class="hours-detail"></span>
+            </div>
+          </div>
+          <div class="info-row">
+            <i class="bi bi-currency-pound" aria-hidden="true"></i>
+            <div>
+              <strong>Child:</strong> <span class="price-child"></span><br>
+              <strong>Adult:</strong> <span class="price-adult"></span>
+            </div>
+          </div>
+          <a class="info-link" href="#" target="_blank" rel="noopener"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    'use strict';
+
+    const mapContainer = document.getElementById("places-map");
+    if (!mapContainer) return;
+
+    const defaultLat = 51.500149;
+    const defaultLng = -0.126240;
+
+    const map = L.map('places-map').setView([defaultLat, defaultLng], 11);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+        maxZoom: 19
+    }).addTo(map);
+
+    // ================= LANDMARK MARKERS ================= //
+    const markersData = [
+        { coords: [51.527610, -0.153710], popup: "London Zoo" },
+        { coords: [51.496960, -0.144870], popup: "Bus Tour" },
+        { coords: [51.500830, -0.122050], popup: "London Eye" },
+        { coords: [51.526530, -0.083680], popup: "London Aquarium" },
+        { coords: [51.482660, -0.005200], popup: "National Maritime Museum" }
+    ];
+
+    const bounds = L.latLngBounds();
+    let openPopup = null;
+
+    markersData.forEach(data => {
+    const marker = L.marker(data.coords).addTo(map);
+
+    // Popup offset: raise ~20px above marker
+    const popup = L.popup({ offset: [0, -20] }).setContent(`<b>${data.popup}</b>`);
+
+    marker.on('click', () => {
+        if (openPopup) openPopup.remove();
+        popup.setLatLng(data.coords).openOn(map);
+        openPopup = popup;
+    });
+
+    bounds.extend(data.coords);
+  });
+
+  // Geolocation popup also raised
+  const userPopup = L.popup({ offset: [0, -20] }).setContent("You are here");
+
+
+  // ================= GEOLOCATION ================= //
+  const geoMsg = document.getElementById('nogeolocation');
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const userCoords = [position.coords.latitude, position.coords.longitude];
+                const userMarker = L.marker(userCoords).addTo(map);
+                const userPopup = L.popup().setContent("You are here");
+
+                userMarker.on('click', () => {
+                    if (openPopup) openPopup.remove();
+                    userPopup.setLatLng(userCoords).openOn(map);
+                    openPopup = userPopup;
+                });
+
+                userPopup.setLatLng(userCoords).openOn(map);
+                openPopup = userPopup;
+
+                bounds.extend(userCoords);
+                map.fitBounds(bounds, { padding: [50, 50] });
+            },
+            () => {
+                if (geoMsg) geoMsg.style.display = 'block';
+                map.fitBounds(bounds, { padding: [50, 50] });
+            }
+        );
+    } else {
+        if (geoMsg) geoMsg.style.display = 'block';
+        map.fitBounds(bounds, { padding: [50, 50] });
+    }
+  });
+</script>

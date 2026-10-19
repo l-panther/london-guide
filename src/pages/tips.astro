@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const travelTips = [
+  {
+    title: 'Get a Visitor Oyster Card',
+    paragraphs: [
+      'A Visitor Oyster card is a smartcard using pay-as-you-go credit for travel on most London public transport. Purchase online and have it delivered to avoid queuing to top up upon arrival.',
+      'Pay-as-you-go fares are cheaper than paper single tickets. You can also use a contactless debit or credit card, though overseas transaction fees may apply.'
+    ]
+  },
+
+  {
+    title: 'Keep Your Oyster Topped Up',
+    paragraphs: [
+      'When using your Oyster card, touch in and out at the start and end of each journey by placing it over the card reader. The fare is deducted, and the reader will display the amount deducted and your remaining balance.',
+      'Topping up is easy and can be done at Tube stations, local shops, and anywhere displaying the Oyster top-up sign.'
+    ]
+  },
+
+  {
+    title: 'Travel Times',
+    paragraphs: [
+      'The busiest times to travel in London are:',
+      'Monday to Friday — Between 8:30 – 09:00 and 17:30 – 18:30.',
+      'If possible, travel outside these times for a quicker, more comfortable journey – especially if carrying luggage or travelling in a group.'
+    ]
+  },
+
+  {
+    title: 'Keep Your Property Safe',
+    paragraphs: [
+      'Keep all luggage and belongings close and in sight. Place luggage on the floor near your feet. If carrying heavy bags, avoid travelling during peak times to make your journey easier and less stressful.',
+      'Staff are present on most services but may not be able to assist with luggage due to their duties.'
+    ]
+  },
+
+  {
+    title: 'Taxis and Minicabs',
+    paragraphs: [
+      'In addition to public transport, taxis and minicabs provide convenient alternatives. These services are professionally licensed, and vehicles will clearly display their licence on the windows.'
+    ]
+  }
+];
+---
+
+<Layout>
+<Header title="Staying safe in the city."/>
+<section id="tips" class="section">
+  <div class="container" style="max-width:820px;">
+    <h2>Top Travel Tips</h2>
+    <div class="mt-4">
+      
+      <div class="tips">
+
+        {travelTips.map((tip, index) => (
+          <article class="tip-card">
+
+            <h3>
+              {index + 1}. {tip.title}
+            </h3>
+
+            {tip.paragraphs.map((paragraph) => (
+              <p class="mb-0">{paragraph}</p>
+            ))}
+
+          </article>
+        ))}
+
+      </div>
+    </div>
+  </div>
+</section>
+</Layout>
+

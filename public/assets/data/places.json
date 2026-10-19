@@ -1,0 +1,71 @@
+[
+	{
+		"id": 1, 
+		"name": "London Zoo", 
+		"price":[
+			{"child": "18.50"},
+			{"adult": "25.50"}
+		],
+		"opening": "",
+		"image": "zoo",
+		"alt": "Tiger in the grass",
+		"description":  "Explore one of the world’s oldest zoos, home to over 750 incredible species. From immersive habitats to interactive exhibits, it offers an unforgettable day out for visitors of all ages."
+	},
+	
+	{
+		"id": 2, 
+		"name": "Bus Tour", 
+		"price":[
+			{"child": "15.00"},
+			{"adult": "32.00"},
+			{"family": "79.00"}
+		],
+		"opening": "",
+		"image": "bus",
+		"alt": "Tour bus",
+		"description":  "Discover London’s iconic landmarks in comfort with a hop-on, hop-off bus tour. Enjoy guided routes, scenic views, and included walking tours, plus a relaxing Thames river cruise."
+	},
+	
+	{
+		"id": 3, 
+		"name": "London Eye", 
+		"price": [
+			{"child": "16.50"},
+			{"adult": "23.00"},
+			{"infants": "0"}
+		],
+		"opening": "",
+		"image": "eye",
+		"alt": "London eye at night",
+		"description":  "Take in breathtaking panoramic views of the city from one of London’s most famous attractions. The London Eye offers a unique perspective, giving you a stunning look at the capital from above."
+	},
+	
+	{
+		"id": 4, 
+		"name": "Aquarium", 
+		"price": [
+			{"child": "15.00"},
+			{"adult": "20.00"},
+			{"concession": "17.00"}
+		],
+		"opening": "",
+		"image": "aquarium",
+		"alt": "Aquarium walk way",
+		"description":  "Step into an enchanting underwater world filled with fascinating marine life. Walk through immersive tunnels and get up close to a wide variety of sea creatures in this captivating experience."
+	},
+	
+	{
+		"id": 5, 
+		"name": "Museum", 
+		"price": [
+			{"child": "0"},
+			{"adult": "0"},
+			{"family": "0"},
+			{"senior": "0"}
+		],
+		"opening": "",
+		"image": "museum",
+		"alt": "Glass display of artifacts",
+		"description":  "Discover the rich history of Britain through fascinating exhibits and artifacts. Explore stories of the past and connect with the people and events that shaped the nation."
+	}
+]

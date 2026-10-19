@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.output/
+.nuxt/
+.astro/
+.env
+.env.*
+!.env.example

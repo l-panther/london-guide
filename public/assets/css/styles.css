@@ -1,0 +1,176 @@
+/* =========================================================
+   LONDON GUIDE — custom theme on top of Bootstrap 5
+   Signature device: dark night-sky parallax hero with a
+   skyline silhouette (Big Ben / Parliament / London Eye).
+========================================================= */
+:root{
+  --navy-deep:#070D18;
+  --navy:#0D1F38;
+  --navy-mid:#123058;
+  --blue:#144B8C;
+  --blue-bright:#1D63B8;
+  --ink:#141B24;
+  --ink-soft:#5B6672;
+  --grey-bg:#F2F4F6;
+  --line:#E3E7EC;
+  --gold:#E7B23A;
+  --shadow:0 22px 46px -26px rgba(7,13,24,.45);
+  --font-head:"Poppins",sans-serif;
+  --font-body:"Inter",sans-serif;
+  --font-script:"Caveat",cursive;
+}
+body{ font-family:var(--font-body); color:var(--ink); background:var(--navy-deep); }
+h1,h2,h3{ font-family:var(--font-head); font-weight:700; color:var(--ink); }
+h2{margin-bottom: 40px;}
+a{ text-decoration:none; }
+
+/* Visible, high-contrast focus ring for keyboard users everywhere */
+a:focus-visible, button:focus-visible, input:focus-visible,
+.nav-link:focus-visible, .btn:focus-visible{
+  outline:3px solid #ffbf47; outline-offset:2px; border-radius:2px;
+}
+
+/* Skip link — hidden until keyboard-focused */
+.skip-link{
+  position:absolute; left:8px; top:-60px; z-index:1090; background:#fff; color:var(--navy);
+  padding:.6rem 1rem; border-radius:6px; font-weight:700; transition:top .15s ease; box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
+.skip-link:focus{ top:8px; }
+
+/* ---------- navbar ---------- */
+.navbar-london{ background:var(--navy-mid); position:relative; }
+.navbar-london .nav-link{
+  color:rgba(255,255,255,.88) !important; font-family:var(--font-head); font-weight:600;
+  font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; padding:1rem 1.1rem !important;
+}
+.navbar-london .nav-link:hover{ color:#fff !important; background:rgba(255,255,255,.08); }
+.navbar-london .nav-link.active{ background:#fff; color:var(--navy) !important; border-radius:2px; }
+.navbar-london .social-icon{ color:#fff; opacity:.85; margin-left:14px; }
+.navbar-london .social-icon:hover{ opacity:1; }
+.navbar-london {
+    position: sticky;
+    top: 0;
+}
+.navbar{padding: 0;}
+/* Floating menu button — fixed top-left, mobile only. Sits above the dark
+   hero so it needs its own contrast treatment rather than living in the bar. */
+.floating-menu-btn{
+  position:fixed; top:18px; left:18px; z-index:1045;
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:rgba(7,13,24,.72); backdrop-filter:blur(6px);
+  color:#fff; border:1px solid rgba(255,255,255,.35); border-radius:100px;
+  padding:.55rem 1rem; font-family:var(--font-head); font-weight:600; font-size:.8rem;
+  letter-spacing:.04em; text-transform:uppercase;
+}
+.floating-menu-btn:hover{ background:rgba(7,13,24,.9); }
+
+/* Offcanvas nav (mobile): slides from the LEFT. At lg+ (offcanvas-lg) it
+   lays out inline inside the navy bar instead of as a drawer. */
+#siteNav.offcanvas{ background:var(--navy-mid); color:#fff; }
+#siteNav .offcanvas-header{ border-bottom:1px solid rgba(255,255,255,.15); }
+#siteNav .offcanvas-title{ color:#fff; font-weight:700; }
+#siteNav .btn-close{ filter:invert(1); }
+#siteNav .social-row{ display:flex; gap:14px; padding:1rem 0; }
+#siteNav .social-row a{ color:rgba(255,255,255,.85); }
+#siteNav .social-row a:hover{ color:#fff; }
+@media (min-width:992px){
+  .navbar{padding: 10px 0;}
+  #siteNav .offcanvas-header{ display:none; }
+  #siteNav .social-row{ margin-left:auto; padding:0; }
+  .floating-menu-btn{ display:none; }
+}
+
+/* ---------- parallax hero ---------- */
+.hero{
+  position:relative; height:320px; overflow:hidden; display:flex; align-items:center; justify-content:center;
+  background: linear-gradient(to bottom,
+      rgba(0,0,0,0.45),
+  rgba(0,0,0,0.95)),
+    url("/assets/images/hero/hero.jpg") no-repeat;
+  background-size: cover;;
+}
+.hero.hero-tall{ height:620px; }
+.hero-sky{ position:absolute; left:0; right:0; bottom:0; height:230px; will-change:transform; }
+.hero-tag{
+  position:relative; z-index:2; font-family:var(--font-script); color:#fff; text-align:center;
+  font-size:clamp(2rem,4vw,2.8rem); text-shadow:0 4px 24px rgba(0,0,0,.4);
+}
+.hero-logo{
+  position:relative; z-index:2; text-align:center; font-family:var(--font-head); font-weight:900; color:#fff;
+  font-size:clamp(2.6rem,6vw,4.2rem); line-height:1.05; margin:0;
+}
+.hero-logo span{ display:block; color:var(--blue-bright); }
+.hero-sub{ position:relative; z-index:2; font-family:var(--font-script); color:rgba(255,255,255,.88); font-size:1.4rem; text-align:center; margin-top:14px; }
+.hero-scroll{
+  position:relative; z-index:2; margin-top:30px; width:46px; height:46px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.5); display:flex; align-items:center; justify-content:center; color:#fff;
+}
+
+/* ---------- section ---------- */
+.section{ background:#fff; padding:76px 0; }
+.section.alt{ background:var(--grey-bg); }
+.eyebrow{ font-family:var(--font-head); font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--blue-bright); }
+
+/* ---------- getting-around sidebar + transport cards ---------- */
+.gt-side a{
+  font-family:var(--font-head); font-weight:700; font-size:.85rem; color:#fff; background:var(--blue);
+  padding:14px 18px; border-radius:6px; display:block; margin-bottom:10px; transition:background .15s ease, transform .15s ease;
+}
+.gt-side a:hover{ background:var(--blue-bright); transform:translateX(-3px); color:#fff; }
+.transport-card{
+  border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); margin-bottom:30px; scroll-margin-top:100px;
+}
+.transport-card .art, .transport-card .art img { width: 100%; }
+
+/* ---------- things-to-do activity cards (improved) ---------- */
+.activity-card{
+  border:none; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); cursor:pointer;
+  transition:transform .22s ease, box-shadow .22s ease; height:100%;
+}
+.activity-card:hover, .activity-card:focus-within{ transform:translateY(-6px); box-shadow:0 30px 60px -26px rgba(7,13,24,.4); }
+.activity-card .band{ padding:12px 16px; font-family:var(--font-head); font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--blue); font-size:.95rem; }
+.activity-card .price-block{ padding:16px; text-align:center; }
+.activity-card .price-block small{ display:block; color:var(--ink-soft); font-size:12px; }
+.activity-card .price-block strong{ font-family:var(--font-head); font-size:1.4rem; }
+.activity-card .more-btn{
+  width:100%; border:none; border-top:1px solid var(--line); background:var(--grey-bg); padding:12px;
+  font-family:var(--font-head); font-weight:700; font-size:12.5px; letter-spacing:.04em; color:var(--ink-soft);
+}
+.activity-card .more-btn:hover{ background:#e9ecef; color:var(--ink); }
+#activityModal .btn-close{ margin-top:-50px; }
+/* ---------- activity modal ---------- */
+#activityModal .modal-content{ border:none; border-radius:16px; overflow:hidden; }
+#activityModal .modal-header{ border-bottom:none; padding-bottom:0; }
+#activityModal .modal-title{ padding-top:30px; }
+#activityModal .info-band{ padding:40px 24px; color:#fff; }
+#activityModal .info-row{ display:flex; gap:14px; margin-bottom:16px; }
+#activityModal .info-row:last-of-type{ margin-bottom:10px; }
+#activityModal .info-row i{ font-size:1.2rem; margin-top:2px; }
+#activityModal .info-link{ color:#fff; text-decoration:underline; font-size:.9rem; }
+
+/* ---------- explore / map ---------- */
+#places-map{ height:440px; border-radius:14px; border:1px solid var(--line); box-shadow:var(--shadow); }
+
+/* ---------- home page extras ---------- */
+.about-figure img{ max-width:540px; margin: auto 0; }
+.more-london-figs{ position:relative; max-width:640px; margin:40px auto 0; height:300px; }
+.more-london-figs .fig{ position:absolute; width:62%; border:6px solid #fff; border-radius:6px; box-shadow:var(--shadow); overflow:hidden; }
+.more-london-figs .fig-1{ top:0; left:0; transform:rotate(-3deg); }
+.more-london-figs .fig-2{ bottom:0; right:0; transform:rotate(2deg); }
+.review{ max-width:520px; margin:0 auto 36px; text-align:center; }
+.review-avatar{ width:64px; height:64px; border-radius:50%; margin:12px auto; background:var(--grey-bg); display:flex; align-items:center; justify-content:center; color:var(--ink-soft); }
+.review h4{ font-family:var(--font-head); font-size:13px; letter-spacing:.05em; text-transform:uppercase; margin-bottom:0; }
+.review blockquote{ margin:0; font-style:italic; color:var(--ink-soft); }
+
+/* ---------- travel tips ---------- */
+.tip-card{ border:1px solid var(--line); border-radius:14px; padding:28px 30px; margin-bottom:22px; box-shadow:var(--shadow); background:#fff; }
+ #tips h3{font-size:1.4rem; margin-bottom:20px;}
+/* ---------- footer ---------- */
+.site-footer{ background:var(--grey-bg); padding:22px 0; }
+.site-footer a{ color:var(--ink-soft); margin-right:16px; }
+.site-footer a:hover{ color:var(--blue-bright); }
+.copyright{ background:var(--navy-deep); color:rgba(255,255,255,.55); text-align:center; padding:16px 0; font-size:13px; }
+.copyright a{ color:var(--gold); }
+
+.btn-navy{ background:var(--blue-bright); border-color:var(--blue-bright); color:#fff; font-family:var(--font-head); font-weight:700; border-radius:100px; padding:.7rem 1.6rem; }
+.btn-navy:hover{ background:var(--blue); border-color:var(--blue); color:#fff; }

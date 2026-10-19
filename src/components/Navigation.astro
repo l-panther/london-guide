@@ -1,0 +1,44 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Things To Do", href: "/places/" },
+  { label: "Getting Around", href: "/transport/" },
+  { label: "Travel Tips", href: "/tips/" }
+];
+---
+
+<nav class="navbar navbar-expand-lg navbar-london sticky-top" aria-label="Primary">
+  <div class="container">
+    <div class="offcanvas offcanvas-start offcanvas-lg" tabindex="-1" id="siteNav" aria-labelledby="siteNavLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#siteNav" aria-label="Close menu"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column flex-lg-row w-100">
+        <ul class="navbar-nav flex-grow-1">
+          {navItems.map((item) => (
+            <li class="nav-item">
+              <a
+                href={item.href}
+                class:list={[
+                  "nav-link",
+                  currentPath === item.href ? "active" : ""
+                ]}
+                aria-current={currentPath === item.href ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+
+        </ul>
+        <div class="social-row pt-3" aria-label="Social media links">
+          <a class="social-icon" href="#" aria-label="Twitter / X"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+          <a class="social-icon" href="#" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+          <a class="social-icon" href="#" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
