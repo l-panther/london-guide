@@ -1,5 +1,6 @@
 ---
-const base = import.meta.env.BASE_URL;
+---
+import { asset } from '../utils/path';
 
 import Header from '../components/Header.astro';
 import Navigation from '../components/Navigation.astro';
@@ -18,8 +19,8 @@ import { COMPANY_NAME } from '../lib/config.js';
 	<meta name="author" content="Leroy Russell">
 
 	<!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo/logo.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href={asset('assets/images/logo/logo.png')}>
+  <link rel="apple-touch-icon" sizes="180x180" href={asset('assets/images//logo/apple-touch-logo.png')}>
 
 	<!-- CSS and Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800;900&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
@@ -27,7 +28,7 @@ import { COMPANY_NAME } from '../lib/config.js';
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
 
-	<link rel="stylesheet" href={`${base}assets/css/styles.css`}>
+	<link rel="stylesheet" href={asset('assets/css/styles.css')}>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -44,11 +45,11 @@ import { COMPANY_NAME } from '../lib/config.js';
   <!-- JS FILES -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script is:inline src={`${base}assets/js/app.js`}></script>
+  <script is:inline src={asset('assets/js/app.js')}></script>
 
   <!-- Leaflet JS --
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <!-<script src={`${base}assets/js/showMap.js`}"></script>-->
+  <!-<script src={asset('assets/js/showMap.js')}></script>-->
   <script is:inline>
     // Footer
     document.getElementById("currentDate").innerHTML = new Date().getFullYear();
