@@ -1,4 +1,5 @@
 ---
+import { asset } from '../utils/path';
 import Header from '../components/Header.astro';
 type Price = Record<string, string | undefined>;
 
@@ -61,7 +62,7 @@ function getFromPrice(priceArray: Price[]): string {
 
                 <span class="art d-block">
                   <img
-                    src={`/assets/images/places/${place.image}.jpg`}
+                    src={asset(`assets/images/places/${place.image}.jpg`)}
                     alt={place.alt}
                     class="img-fluid"
                   />
