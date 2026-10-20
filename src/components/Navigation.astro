@@ -1,11 +1,13 @@
 ---
+import { BASE_URL } from '../utils/path';
+
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Things To Do", href: "/places/" },
-  { label: "Getting Around", href: "/transport/" },
-  { label: "Travel Tips", href: "/tips/" }
+  { label: "Home", href: BASE_URL },
+  { label: "Things To Do", href: `${BASE_URL}places/` },
+  { label: "Getting Around", href: `${BASE_URL}transport/` },
+  { label: "Travel Tips", href: `${BASE_URL}tips/` }
 ];
 ---
 
