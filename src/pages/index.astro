@@ -1,4 +1,5 @@
 ---
+import { asset } from '../utils/path';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 ---
@@ -11,7 +12,7 @@ import Header from '../components/Header.astro';
     <h2>About London</h2>
     <p class="mt-4">London is the capital of England and is the most populous city of the United Kingdom. London is a leading global city in education, finance, fashion, media, health care, transportation, and many other things. It is the world's most visited city and has the world's largest city airport system. London has a hugely diverse range of people and cultures, with more than 300 languages spoken around the city.</p>
     <div class="about-figure">
-      <img src="/assets/images/main/london1.png" alt="Buses passing Big Ben in traffic, showcasing the iconic London landmarks" />
+      <img src={asset('assets/images/main/london1.png')} alt="Buses passing Big Ben in traffic, showcasing the iconic London landmarks" />
     </div>
   </div>
 </section>
@@ -22,7 +23,7 @@ import Header from '../components/Header.astro';
     <h2>More London</h2>
     <p class="mt-4">There are endless activities to see when you visit London, from tourist attractions like the London Eye to bus tours. Everything is easily accessed, and all activities will give more insight into the diverse city. The multicultural city has everything to offer, and you will find that there aren't enough hours in a day to do everything. It is recommended to plan and book early to ensure you don't miss out.</p>
     <div class="about-figure">
-     <img src="/assets/images/main/london2.png" alt="London Eye during the day and at night showcasing two iconic views" />
+     <img src={asset('assets/images/main/london2.png')} alt="London Eye during the day and at night showcasing two iconic views" />
     </div>
   </div>
 </section>
