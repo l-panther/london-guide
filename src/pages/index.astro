@@ -6,41 +6,43 @@ import Header from '../components/Header.astro';
 
 <Layout>
 <Header title="An insight into some of the history and things to do in London, England."/>
-<section class="section">
-  <div class="container text-center" style="max-width:820px;">
-    <span class="eyebrow">Welcome</span>
-    <h2>About London</h2>
-    <p class="mt-4">London is the capital of England and is the most populous city of the United Kingdom. London is a leading global city in education, finance, fashion, media, health care, transportation, and many other things. It is the world's most visited city and has the world's largest city airport system. London has a hugely diverse range of people and cultures, with more than 300 languages spoken around the city.</p>
-    <div class="about-figure">
-      <img src={asset('assets/images/main/london1.png')} alt="Buses passing Big Ben in traffic, showcasing the iconic London landmarks" />
-    </div>
-  </div>
-</section>
-
-<section class="section alt">
-  <div class="container text-center" style="max-width:820px;">
-    <span class="eyebrow">Discover</span>
-    <h2>More London</h2>
-    <p class="mt-4">There are endless activities to see when you visit London, from tourist attractions like the London Eye to bus tours. Everything is easily accessed, and all activities will give more insight into the diverse city. The multicultural city has everything to offer, and you will find that there aren't enough hours in a day to do everything. It is recommended to plan and book early to ensure you don't miss out.</p>
-    <div class="about-figure">
-     <img src={asset('assets/images/main/london2.png')} alt="London Eye during the day and at night showcasing two iconic views" />
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container" style="max-width:600px;">
-    <h2 class="text-center mb-4">Reviews</h2>
-    <div class="review">
-      <h4>Sean Johnson, Mitcham</h4>
-      <div class="review-avatar"><i class="bi bi-person-fill fs-4" aria-hidden="true"></i></div>
-      <blockquote>&ldquo;London has changed a lot over the years, but I like the mix of people and cultures.&rdquo;</blockquote>
-    </div>
-    <div class="review">
-      <h4>Kim Chambers, Bromley</h4>
-      <div class="review-avatar"><i class="bi bi-person-fill fs-4" aria-hidden="true"></i></div>
-      <blockquote>&ldquo;One of the greatest cities in the world.&rdquo;</blockquote>
-    </div>
-  </div>
-</section>
+  <main id="main">
+    <section class="section">
+      <div class="container text-center" style="max-width:820px;">
+        <span class="eyebrow">Welcome</span>
+        <h2>About London</h2>
+        <p class="mt-4">London is the capital of England and is the most populous city of the United Kingdom. London is a leading global city in education, finance, fashion, media, health care, transportation, and many other things. It is the world's most visited city and has the world's largest city airport system. London has a hugely diverse range of people and cultures, with more than 300 languages spoken around the city.</p>
+        <div class="about-figure">
+          <img src={asset('assets/images/main/london1.png')} alt="Buses passing Big Ben in traffic, showcasing the iconic London landmarks" />
+        </div>
+      </div>
+    </section>
+    
+    <section class="section alt">
+      <div class="container text-center" style="max-width:820px;">
+        <span class="eyebrow">Discover</span>
+        <h2>More London</h2>
+        <p class="mt-4">There are endless activities to see when you visit London, from tourist attractions like the London Eye to bus tours. Everything is easily accessed, and all activities will give more insight into the diverse city. The multicultural city has everything to offer, and you will find that there aren't enough hours in a day to do everything. It is recommended to plan and book early to ensure you don't miss out.</p>
+        <div class="about-figure">
+         <img src={asset('assets/images/main/london2.png')} alt="London Eye during the day and at night showcasing two iconic views" />
+        </div>
+      </div>
+    </section>
+    
+    <section class="section">
+      <div class="container" style="max-width:600px;">
+        <h2 class="text-center mb-4">Reviews</h2>
+        <div class="review">
+          <h4>Sean Johnson, Mitcham</h4>
+          <div class="review-avatar"><i class="bi bi-person-fill fs-4" aria-hidden="true"></i></div>
+          <blockquote>&ldquo;London has changed a lot over the years, but I like the mix of people and cultures.&rdquo;</blockquote>
+        </div>
+        <div class="review">
+          <h4>Kim Chambers, Bromley</h4>
+          <div class="review-avatar"><i class="bi bi-person-fill fs-4" aria-hidden="true"></i></div>
+          <blockquote>&ldquo;One of the greatest cities in the world.&rdquo;</blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
