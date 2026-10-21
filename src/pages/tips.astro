@@ -47,30 +47,32 @@ const travelTips = [
 
 <Layout>
 <Header title="Staying safe in the city."/>
-<section id="tips" class="section">
-  <div class="container" style="max-width:820px;">
-    <h2>Top Travel Tips</h2>
-    <div class="mt-4">
-      
-      <div class="tips">
-
-        {travelTips.map((tip, index) => (
-          <article class="tip-card">
-
-            <h3>
-              {index + 1}. {tip.title}
-            </h3>
-
-            {tip.paragraphs.map((paragraph) => (
-              <p class="mb-0">{paragraph}</p>
+  <main id="main">
+    <section id="tips" class="section">
+      <div class="container" style="max-width:820px;">
+        <h2>Top Travel Tips</h2>
+        <div class="mt-4">
+          
+          <div class="tips">
+    
+            {travelTips.map((tip, index) => (
+              <article class="tip-card">
+    
+                <h3>
+                  {index + 1}. {tip.title}
+                </h3>
+    
+                {tip.paragraphs.map((paragraph) => (
+                  <p class="mb-0">{paragraph}</p>
+                ))}
+    
+              </article>
             ))}
-
-          </article>
-        ))}
-
+    
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 </Layout>
 
