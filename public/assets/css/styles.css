@@ -152,7 +152,7 @@ a:focus-visible, button:focus-visible, input:focus-visible,
 #places-map{ height:440px; border-radius:14px; border:1px solid var(--line); box-shadow:var(--shadow); }
 
 /* ---------- home page extras ---------- */
-.about-figure img{ max-width:540px; margin: auto 0; }
+.about-figure img{ width:100%; margin: auto 0; }
 .more-london-figs{ position:relative; max-width:640px; margin:40px auto 0; height:300px; }
 .more-london-figs .fig{ position:absolute; width:62%; border:6px solid #fff; border-radius:6px; box-shadow:var(--shadow); overflow:hidden; }
 .more-london-figs .fig-1{ top:0; left:0; transform:rotate(-3deg); }
