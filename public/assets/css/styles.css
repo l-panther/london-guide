@@ -86,7 +86,7 @@ a:focus-visible, button:focus-visible, input:focus-visible,
   background: linear-gradient(to bottom,
       rgba(0,0,0,0.45),
   rgba(0,0,0,0.95)),
-    url("../assets/images/hero/hero.jpg") no-repeat;
+    url("/london-guide/assets/images/hero/hero.jpg") no-repeat;
   background-size: cover;;
 }
 .hero.hero-tall{ height:620px; }
