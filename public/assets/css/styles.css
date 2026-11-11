@@ -87,9 +87,10 @@ a:focus-visible, button:focus-visible, input:focus-visible,
       rgba(0,0,0,0.45),
   rgba(0,0,0,0.95)),
     url("/london-guide/assets/images/hero/hero.jpg") no-repeat;
-  background-size: cover;;
+  background-size: cover;
+  background-position: center;
 }
-.hero.hero-tall{ height:620px; }
+.hero.hero-tall{ height:520px; }
 .hero-sky{ position:absolute; left:0; right:0; bottom:0; height:230px; will-change:transform; }
 .hero-tag{
   position:relative; z-index:2; font-family:var(--font-script); color:#fff; text-align:center;
@@ -152,7 +153,7 @@ a:focus-visible, button:focus-visible, input:focus-visible,
 #places-map{ height:440px; border-radius:14px; border:1px solid var(--line); box-shadow:var(--shadow); }
 
 /* ---------- home page extras ---------- */
-.about-figure img{ width:100%; margin: auto 0; }
+.about-figure img{ width:80%; margin: auto 0; }
 .more-london-figs{ position:relative; max-width:640px; margin:40px auto 0; height:300px; }
 .more-london-figs .fig{ position:absolute; width:62%; border:6px solid #fff; border-radius:6px; box-shadow:var(--shadow); overflow:hidden; }
 .more-london-figs .fig-1{ top:0; left:0; transform:rotate(-3deg); }
@@ -174,3 +175,63 @@ a:focus-visible, button:focus-visible, input:focus-visible,
 
 .btn-navy{ background:var(--blue-bright); border-color:var(--blue-bright); color:#fff; font-family:var(--font-head); font-weight:700; border-radius:100px; padding:.7rem 1.6rem; }
 .btn-navy:hover{ background:var(--blue); border-color:var(--blue); color:#fff; }
+
+/* ==========================================
+   MOBILE - HERO & TYPOGRAPHY
+========================================== */
+
+@media (max-width: 767px) {
+
+  .floating-menu-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+  }
+  
+  /* Hero */
+  .hero.hero-tall {
+    height: 520px;
+  }
+
+  /* Move hero content slightly lower */
+  .hero.hero-tall > .container {
+    transform: translateY(35px);
+  }
+
+  /* Hero title */
+  .hero-logo {
+    font-size: clamp(2.6rem, 9vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  /* Hero subtitle */
+  .hero-sub {
+    font-size: 1.35rem;
+    line-height: 1.45;
+    margin-top: 18px;
+  }
+
+  /* Scroll arrow */
+  .hero-scroll {
+    margin-top: 25px;
+  }
+
+  /* Main section spacing */
+  .section {
+    padding: 55px 0;
+  }
+
+  /* Body paragraphs */
+  .section p, blockquote {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* Section headings */
+  .section h2 {
+    font-size: clamp(1.7rem, 6vw, 2rem);
+    margin-bottom: 25px;
+  }
+
+  .about-figure img{ width:100%; margin: auto 0; }
+}
