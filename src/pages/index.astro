@@ -4,7 +4,9 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 ---
 
-<Layout>
+<Layout
+  title="London Travel Guide | Explore, Discover & Get Around"
+  description="Discover London with our travel guide. Explore top attractions, places to visit, transport options and practical tips for getting around the capital">
 <Header title="An insight into some of the history and things to do in London, England."/>
   <main id="main">
     <section class="section">
@@ -46,3 +48,26 @@ import Header from '../components/Header.astro';
     </section>
   </main>
 </Layout>
+
+
+<style>
+/* ---------- home page extras ---------- */
+.about-figure img{ width:80%; margin: auto 0; }
+.more-london-figs{ position:relative; max-width:640px; margin:40px auto 0; height:300px; }
+.more-london-figs .fig{ position:absolute; width:62%; border:6px solid #fff; border-radius:6px; box-shadow:var(--shadow); overflow:hidden; }
+.more-london-figs .fig-1{ top:0; left:0; transform:rotate(-3deg); }
+.more-london-figs .fig-2{ bottom:0; right:0; transform:rotate(2deg); }
+.review{ max-width:520px; margin:0 auto 36px; text-align:center; }
+.review-avatar{ width:64px; height:64px; border-radius:50%; margin:12px auto; background:var(--grey-bg); display:flex; align-items:center; justify-content:center; color:var(--ink-soft); }
+.review h4{ font-family:var(--font-head); font-size:13px; letter-spacing:.05em; text-transform:uppercase; margin-bottom:0; }
+.review blockquote{ margin:0; font-style:italic; color:var(--ink-soft); }
+
+/* ==========================================
+   MOBILE - HERO & TYPOGRAPHY
+========================================== */
+
+@media (max-width: 767px) {
+  .about-figure img{ width:100%; margin: auto 0; }
+}
+
+</style>
