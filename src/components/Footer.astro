@@ -1,5 +1,6 @@
 ---
 import { COMPANY_NAME } from '../lib/config';
+let date= new Date().getFullYear();
 ---
 
 <!-- #footer -->
@@ -11,4 +12,14 @@ import { COMPANY_NAME } from '../lib/config';
     <a href="#" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
   </div>
 </footer>
-<p class="copyright mb-0">&copy; <span id="currentDate"></span> London Guide | By <a href="#">Leroy Russell</a></p>
+<p class="copyright mb-0">&copy; {date} London Guide | By <span>Leroy Russell</span></p>
+
+
+<style>
+/* ---------- footer ---------- */
+.site-footer{ background:var(--grey-bg); padding:22px 0; }
+.site-footer a{ color:var(--ink-soft); margin-right:16px; }
+.site-footer a:hover{ color:var(--blue-bright); }
+.copyright{ background:var(--navy-deep); color:rgba(255,255,255,.55); text-align:center; padding:16px 0; font-size:13px; }
+.copyright span{ color:var(--gold); }
+</style>
