@@ -45,7 +45,9 @@ const travelTips = [
 ];
 ---
 
-<Layout>
+<Layout
+  title="London Travel Tips | Essential Visitor Information"
+  description="Plan your visit to London with practical travel tips, helpful advice and essential information to make exploring the city easier and more enjoyable.">
 <Header title="Staying safe in the city."/>
   <main id="main">
     <section id="tips" class="section">
@@ -76,3 +78,9 @@ const travelTips = [
   </main>
 </Layout>
 
+
+<style>
+/* ---------- travel tips ---------- */
+.tip-card{ border:1px solid var(--line); border-radius:14px; padding:28px 30px; margin-bottom:22px; box-shadow:var(--shadow); background:#fff; }
+ #tips h3{font-size:1.4rem; margin-bottom:20px;}
+</style>
