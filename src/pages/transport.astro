@@ -4,8 +4,10 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 ---
 
-<Layout>
-<Header title="Getting around the city"/>
+<Layout
+  title="Getting Around London | Public Transport Guide"
+  description="Learn how to get around London using buses, the Underground, trains and taxis. Explore transport options and useful information for travelling across the city.">
+<Header title="Ways to get around the city"/>
   <main id="main">
     <section class="section">
       <div class="container">
@@ -55,7 +57,7 @@ import Header from '../components/Header.astro';
           <div class="transport-card" id="taxi">
             <div class="row g-0">
               <div class="col-md-5 art">
-                <img src={asset('assets/images/main/taxi.webp')}" alt="A double-decker London bus on the streets" class="transportImg">         
+                <img src={asset('assets/images/main/taxi.webp')} alt="A double-decker London bus on the streets" class="transportImg">         
               </div>
               <div class="col-12 p-4">
                 <h3><i class="bi bi-taxi-front me-2" aria-hidden="true"></i>Taxi</h3>
@@ -79,3 +81,17 @@ import Header from '../components/Header.astro';
     </section>
   </main>
 </Layout>
+
+
+<style>
+/* ---------- getting-around sidebar + transport cards ---------- */
+.gt-side a{
+  font-family:var(--font-head); font-weight:700; font-size:.85rem; color:#fff; background:var(--blue);
+  padding:14px 18px; border-radius:6px; display:block; margin-bottom:10px; transition:background .15s ease, transform .15s ease;
+}
+.gt-side a:hover{ background:var(--blue-bright); transform:translateX(-3px); color:#fff; }
+.transport-card{
+  border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); margin-bottom:30px; scroll-margin-top:100px;
+}
+.transport-card .art, .transport-card .art img { width: 100%; }
+</style>
