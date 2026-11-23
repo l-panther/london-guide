@@ -37,8 +37,10 @@ function getFromPrice(priceArray: Price[]): string {
 }
 ---
 
-<Layout>
-  <Header title="Explore the city." />
+<Layout
+  title="Things to Do in London | Attractions & Activities"
+  description="Explore things to do in London, from museums and historic landmarks to sightseeing tours and popular attractions. Discover places worth visiting.">
+  <Header title="Explore the many things to do." />
   <main id="main">
   <section class="section alt">
     <div class="container">
@@ -137,6 +139,38 @@ function getFromPrice(priceArray: Price[]): string {
   </div>
 </main>
 </Layout>
+
+
+<style>
+/* ---------- things-to-do activity cards (improved) ---------- */
+.activity-card{
+  border:none; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); cursor:pointer;
+  transition:transform .22s ease, box-shadow .22s ease; height:100%;
+}
+.activity-card:hover, .activity-card:focus-within{ transform:translateY(-6px); box-shadow:0 30px 60px -26px rgba(7,13,24,.4); }
+.activity-card .band{ padding:12px 16px; font-family:var(--font-head); font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--blue); font-size:.95rem; }
+.activity-card .price-block{ padding:16px; text-align:center; }
+.activity-card .price-block small{ display:block; color:var(--ink-soft); font-size:12px; }
+.activity-card .price-block strong{ font-family:var(--font-head); font-size:1.4rem; }
+.activity-card .more-btn{
+  width:100%; border:none; border-top:1px solid var(--line); background:var(--grey-bg); padding:12px;
+  font-family:var(--font-head); font-weight:700; font-size:12.5px; letter-spacing:.04em; color:var(--ink-soft);
+}
+.activity-card .more-btn:hover{ background:#e9ecef; color:var(--ink); }
+#activityModal .btn-close{ margin-top:-50px; }
+/* ---------- activity modal ---------- */
+#activityModal .modal-content{ border:none; border-radius:16px; overflow:hidden; }
+#activityModal .modal-header{ border-bottom:none; padding-bottom:0; }
+#activityModal .modal-title{ padding-top:30px; }
+#activityModal .info-band{ padding:40px 24px; color:#fff; }
+#activityModal .info-row{ display:flex; gap:14px; margin-bottom:16px; }
+#activityModal .info-row:last-of-type{ margin-bottom:10px; }
+#activityModal .info-row i{ font-size:1.2rem; margin-top:2px; }
+#activityModal .info-link{ color:#fff; text-decoration:underline; font-size:.9rem; }
+
+/* ---------- explore / map ---------- */
+#places-map{ height:440px; border-radius:14px; border:1px solid var(--line); box-shadow:var(--shadow); }
+</style>
 
 
 <!-- Leaflet CSS -->
